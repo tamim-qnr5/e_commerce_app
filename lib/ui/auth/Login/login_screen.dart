@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../MyTheme.dart';
+
+
+import '../../MyTheme.dart';
+import '../../components/AuthForm.dart';
 import '../Register_screen/Register_screen.dart';
-import '../components/LoginForm.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = 'login';
@@ -63,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
-                  Login_Form(
+                  AuthForm(
                       hintText: 'enter your emil',
                       validator: (text) {
                         if (text == null || text.trim().isEmpty) {
@@ -92,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
-                  Login_Form(
+                  AuthForm(
                       hintText: 'enter your password',
                       validator: (text) {
                         if (text == null || text.trim().isEmpty) {

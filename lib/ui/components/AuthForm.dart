@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../MyTheme.dart';
-class Login_Form extends StatelessWidget {
+
+
+class AuthForm extends StatelessWidget {
   String? Function(String?)? validator;
   TextEditingController controller;
   bool isPassword = false;
   TextInputType KeybordType;
   String hintText;
 
-  Login_Form(
+  AuthForm(
       {this.KeybordType = TextInputType.text,
       required this.controller,
       this.isPassword = false,

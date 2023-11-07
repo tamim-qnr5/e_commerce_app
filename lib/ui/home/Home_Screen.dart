@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+
 import '../MyTheme.dart';
 import '../category_tab/category_tab.dart';
 import '../components/FormFild.dart';
@@ -11,6 +12,8 @@ import '../profile_tab/profile_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
+
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
