@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:commerce_app/data/Api/Api_const.dart';
 import 'package:commerce_app/data/Api/base_error.dart';
+import 'package:commerce_app/data/models/request/LoginRequest.dart';
 import 'package:commerce_app/data/models/request/RegisterRequest.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
@@ -17,7 +18,7 @@ class ApiManager {
     return _instance!;
   }
 
-  Future<Either<BaseError, RegisterResponse>> register(
+  Future<Either<BaseError, LoginResponse>> register(
     String name,
     String email,
     String password,
@@ -37,7 +38,7 @@ class ApiManager {
       );
       var response = await http.post(url, body: request.toJson());
       var registerResponse =
-          RegisterResponse.fromJson(jsonDecode(response.body));
+          LoginResponse.fromJson(jsonDecode(response.body));
       if (response.statusCode >= 200 && response.statusCode < 300) {
         return right(registerResponse);
       } else {
@@ -45,6 +46,34 @@ class ApiManager {
             errorMessage: registerResponse.error != null
                 ? registerResponse.error?.msg
                 : registerResponse.message));
+      }
+    } else {
+      return left(BaseError(errorMessage: 'Please check connection'));
+    }
+
+    ///https://ecommerce.routemisr.com/api/v1/auth/signup
+  }
+
+  Future<Either<BaseError, LoginResponse>> login(
+      String email,
+      String password,
+      ) async {
+    final connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult == ConnectivityResult.mobile ||
+        connectivityResult == ConnectivityResult.wifi) {
+      Uri url = Uri.https(ApiConst.baseUrl, ApiConst.logApi);
+      var request = LoginRequest(
+        email: email,
+        password: password,
+      );
+      var response = await http.post(url, body: request.toJson());
+      var loginResponse =
+      LoginResponse.fromJson(jsonDecode(response.body));
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        return right(loginResponse);
+      } else {
+        return left(BaseError(
+            errorMessage       : loginResponse.message));
       }
     } else {
       return left(BaseError(errorMessage: 'Please check connection'));

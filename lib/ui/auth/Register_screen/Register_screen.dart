@@ -1,7 +1,7 @@
 import 'package:commerce_app/data/repository/auth_repo/Repository/auth_repo_impl.dart';
 import 'package:commerce_app/domain/useCase/register_use_case.dart';
 
-import 'package:commerce_app/ui/auth/Login/cubit/states.dart';
+import 'package:commerce_app/ui/auth/Register_screen/cubit/states.dart';
 import 'package:commerce_app/ui/auth/Register_screen/cubit/register_screen_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

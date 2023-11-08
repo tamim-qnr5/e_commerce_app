@@ -1,5 +1,5 @@
 import 'package:commerce_app/data/Api/Api_Maneger.dart';
-import 'package:commerce_app/ui/auth/Login/cubit/states.dart';
+import 'package:commerce_app/ui/auth/Register_screen/cubit/states.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../domain/repository/auth_repository/repository/auth_repo_contract.dart';

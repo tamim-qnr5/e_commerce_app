@@ -1,28 +1,25 @@
+import 'package:commerce_app/data/models/response/UserDto.dart';
 
-
-import 'package:commerce_app/data/models/response/Error.dart';
-import 'package:commerce_app/domain/entities/Auth_result_Entity.dart';
-
-import 'UserDto.dart';
+import '../../../domain/entities/Auth_result_Entity.dart';
+import 'Error.dart';
 
 /// message : "success"
-/// user : {"name":"Tamim Alhager","email":"tamim@route.com","role":"user"}
-/// token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDE5NTk4MTgzMDEzYzBlYjViY2ViNyIsIm5hbWUiOiJUYW1pbSBBbGhhZ2VyIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2OTg3OTY5NTMsImV4cCI6MTcwNjU3Mjk1M30.8RreTM0hxnRmZ0yE3GLaGK6Su0kSpI8RXElCnP7hMaA"
+/// user : {"name":"Tamim Alhager","email":"tamim.qnr5@gmail.com","role":"user"}
+/// token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDFhY2I1MTgzMDEzYzBlYjVjNGExMCIsIm5hbWUiOiJUYW1pbSBBbGhhZ2VyIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2OTk0MDQyOTksImV4cCI6MTcwNzE4MDI5OX0.lX4Z402L51sBqLMof1PTru9g-cdFuF7JvyuzFLF9BuI"
 
 class LoginResponse {
   LoginResponse({
     this.message,
+    this.statusMsg,
     this.user,
     this.token,
-    this.error,
-    this.statusMsg});
+  });
 
   LoginResponse.fromJson(dynamic json) {
     message = json['message'];
     statusMsg = json['statusMsg'];
     user = json['user'] != null ? UserDto.fromJson(json['user']) : null;
     token = json['token'];
-    error = json['errors'];
   }
   String? message;
   UserDto? user;
@@ -34,7 +31,6 @@ class LoginResponse {
     final map = <String, dynamic>{};
     map['message'] = message;
     map['statusMsg'] = statusMsg;
-    map['errors'] = error;
     if (user != null) {
       map['user'] = user?.toJson();
     }
@@ -45,3 +41,7 @@ class LoginResponse {
     return AuthResultEntity(userEntity: user?.toUserEntity(), token: token);
   }
 }
+
+/// name : "Tamim Alhager"
+/// email : "tamim.qnr5@gmail.com"
+/// role : "user"

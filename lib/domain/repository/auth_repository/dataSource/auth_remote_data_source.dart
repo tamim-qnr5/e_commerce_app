@@ -12,4 +12,8 @@ abstract class AuthRemoteDataSource{
       String rePassword,
       String phone,
       );
+  Future<Either<BaseError,AuthResultEntity>> login(
+      String email,
+      String password,
+      );
 }

@@ -1,21 +1,20 @@
-import 'package:commerce_app/data/models/response/RegisterResponse.dart';
-import 'package:commerce_app/domain/entities/Auth_result_Entity.dart';
+import '../../../../domain/entities/Auth_result_Entity.dart';
 
-abstract class RegisterStates {}
+abstract class LoginStates {}
 
-class RegisterInitialState extends RegisterStates {}
+class LoginInitialState extends LoginStates {}
 
-class RegisterErrorState extends RegisterStates {
+class LoginErrorState extends LoginStates {
   String? message;
-  RegisterErrorState({required this.message});
+  LoginErrorState({required this.message});
 }
 
-class RegisterSuccessState extends RegisterStates {
+class LoginSuccessState extends LoginStates {
   AuthResultEntity response;
-  RegisterSuccessState({required this.response});
+  LoginSuccessState({required this.response});
 }
 
-class RegisterLoadingState extends RegisterStates {
+class LoginLoadingState extends LoginStates {
   String? message;
-  RegisterLoadingState({required this.message});
+  LoginLoadingState({required this.message});
 }

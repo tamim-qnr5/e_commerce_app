@@ -17,6 +17,12 @@ class AuthRepoImpl implements AuthRepoContract{
     return response;
   }
 
+  @override
+  Future<Either<BaseError, AuthResultEntity>> login(String email, String password) {
+    var response = authRemoteDataSource.login(email, password);
+    return response;
+  }
+
 }
 AuthRepoContract injectAuthRepoContract(){
   return AuthRepoImpl(authRemoteDataSource: injectAuthRemoteDataSource());
