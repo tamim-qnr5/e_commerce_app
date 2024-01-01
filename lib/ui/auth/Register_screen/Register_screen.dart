@@ -53,11 +53,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Image.asset('assets/Route_Title.png'),
+                    // Image.asset('assets/Route_Title.png'),
 
                     ///logo
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.01,
+                      height: MediaQuery.of(context).size.height * 0.1,
                     ),
                     Text(
                       'Full Name',

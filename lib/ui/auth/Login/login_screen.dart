@@ -57,11 +57,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Image.asset('assets/Route_Title.png'),
+                    // Image.asset('assets/Route_Title.png'),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.05,
                     ),
-                    Text('Welcome Back To Route',
+                    Text('Welcome Back',
                         style: TextStyle(
                             color: MyTheme.whiteColor,
                             fontWeight: FontWeight.w500,
@@ -70,8 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Please sign in with your mail',
                       style: TextStyle(
                           color: MyTheme.whiteColor,
-                          fontWeight: FontWeight.w200,
-                          fontSize: 16),
+                          fontWeight: FontWeight.w300,
+                          fontSize: 17),
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.05,

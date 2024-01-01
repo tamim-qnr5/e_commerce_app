@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset('assets/Route_Title.png'),
+        // title: Image.asset('assets/Route_Title.png'),
       ),
       body: Column(
         children: [
